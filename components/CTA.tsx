@@ -21,7 +21,7 @@ export default function CTA() {
         </motion.h2>
         <motion.p
           className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto"
-          style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, letterSpacing: 0 }}
+          style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, letterSpacing: 0 }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

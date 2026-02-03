@@ -41,7 +41,7 @@ export default function Hero() {
           {/* Description */}
           <motion.p 
             className="text-lg text-gray-300 leading-relaxed"
-            style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, letterSpacing: 0 }}
+            style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, letterSpacing: 0 }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -60,7 +60,7 @@ export default function Hero() {
               <motion.div
                 key={feature}
                 className="flex items-center gap-3 text-white text-base"
-                style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, letterSpacing: 0 }}
+                style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, letterSpacing: 0 }}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 + index * 0.1, duration: 0.4 }}

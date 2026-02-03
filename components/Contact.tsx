@@ -43,7 +43,7 @@ export default function Contact() {
               <h2 className="text-4xl font-display font-bold text-white mb-4">
                 Neem <span className="gradient-text">contact</span> op
               </h2>
-              <p className="text-lg text-gray-300" style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, letterSpacing: 0 }}>
+              <p className="text-lg text-gray-300" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, letterSpacing: 0 }}>
                 Heeft u een vraag of wilt u een vrijblijvende offerte? Neem gerust contact met ons op, wij helpen u graag verder.
               </p>
             </div>
@@ -92,7 +92,7 @@ export default function Contact() {
               whileHover={{ scale: 1.02 }}
             >
               <h3 className="text-xl font-display font-bold text-white mb-2">Liever direct bellen?</h3>
-              <p className="text-gray-300 mb-4" style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, letterSpacing: 0 }}>
+              <p className="text-gray-300 mb-4" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, letterSpacing: 0 }}>
                 Wij zijn bereikbaar op werkdagen en staan klaar om uw vragen te beantwoorden.
               </p>
               <a

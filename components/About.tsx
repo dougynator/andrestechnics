@@ -42,7 +42,7 @@ export default function About() {
             </motion.h2>
             <motion.p
               className="text-lg text-gray-300 leading-relaxed"
-              style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, letterSpacing: 0 }}
+              style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, letterSpacing: 0 }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -52,7 +52,7 @@ export default function About() {
             </motion.p>
             <motion.p
               className="text-lg text-gray-300 leading-relaxed"
-              style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, letterSpacing: 0 }}
+              style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, letterSpacing: 0 }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
