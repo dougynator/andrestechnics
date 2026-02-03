@@ -26,40 +26,53 @@ body {
 }
 
 body {
-  font-family: var(--font-inter);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern' 1;
+  text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-space-grotesk);
+  font-family: var(--font-space-grotesk), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
-/* Body text styling for better readability */
-p, span, li, a, label, input, textarea {
-  font-family: var(--font-inter);
+/* Body text styling - exact match with Lovable */
+p, span, li, a, label, input, textarea, div {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
+  line-height: 1.6;
 }
 
-/* Smaller text styling */
+/* Smaller text styling - exact match */
 .text-sm, small {
-  font-family: var(--font-inter);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.5;
+  font-size: 0.875rem;
 }
 
 /* Medium text */
-.text-base, .text-lg {
-  font-family: var(--font-inter);
+.text-base {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   line-height: 1.6;
+  font-size: 1rem;
+}
+
+.text-lg {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+  font-size: 1.125rem;
 }
 
 /* Gradient animations */

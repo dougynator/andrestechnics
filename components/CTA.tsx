@@ -20,7 +20,8 @@ export default function CTA() {
           Klaar om <span className="gradient-text">samen te werken</span>?
         </motion.h2>
         <motion.p
-          className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto font-normal"
+          className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto"
+          style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, letterSpacing: 0 }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

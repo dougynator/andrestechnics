@@ -48,12 +48,16 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-dark rounded-lg overflow-hidden border border-dark-lighter transition-all duration-300 hover:border-primary/30"
+              className="bg-dark rounded-lg overflow-hidden border border-dark-lighter/50 transition-all duration-300"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.5 }}
-              whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(255, 107, 53, 0.15)' }}
+              whileHover={{ 
+                y: -8, 
+                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)',
+                borderColor: 'rgba(255, 107, 53, 0.3)'
+              }}
             >
               <div className="relative w-full h-48 overflow-hidden bg-dark-lighter">
                 <motion.div
@@ -73,14 +77,15 @@ export default function Services() {
                 <h3 className="text-2xl font-display font-bold text-white mb-3 leading-tight">
                   {service.title}
                 </h3>
-                <p className="text-gray-300 mb-6 text-base leading-relaxed font-normal">
+                <p className="text-gray-300 mb-6 text-base leading-relaxed" style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, letterSpacing: 0 }}>
                   {service.description}
                 </p>
                 <ul className="space-y-3 mb-6">
                   {service.items.map((item, itemIndex) => (
                     <motion.li
                       key={itemIndex}
-                      className="flex items-start gap-3 text-gray-300 text-sm leading-relaxed"
+                      className="flex items-start gap-3 text-gray-300 text-sm"
+                      style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, letterSpacing: 0, lineHeight: 1.5 }}
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
@@ -94,13 +99,14 @@ export default function Services() {
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="font-normal">{item}</span>
+                      <span>{item}</span>
                     </motion.li>
                   ))}
                 </ul>
                 <Link
                   href="#contact"
                   className="inline-flex items-center gap-2 text-primary hover:text-primary-dark transition-all duration-300 font-medium text-sm group"
+                  style={{ fontFamily: 'var(--font-inter)', fontWeight: 500, letterSpacing: 0 }}
                 >
                   Meer info
                   <svg 
@@ -128,6 +134,7 @@ export default function Services() {
           <Link
             href="#contact"
             className="btn-gradient inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg font-medium text-base"
+            style={{ fontFamily: 'var(--font-inter)', fontWeight: 500, letterSpacing: 0 }}
           >
             Bespreek uw project
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
