@@ -41,7 +41,7 @@ export default function About() {
               Over <span className="gradient-text">Andres-Technics</span>
             </motion.h2>
             <motion.p
-              className="text-lg text-gray-300 leading-relaxed"
+              className="text-lg text-gray-300 leading-relaxed font-normal"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -50,7 +50,7 @@ export default function About() {
               Met meer dan 15 jaar ervaring in de sector zijn wij uw betrouwbare partner voor alle sanitair-, verwarmings- en ontstopping werken. Wij staan bekend om onze vakkundigheid, betrouwbaarheid en persoonlijke aanpak.
             </motion.p>
             <motion.p
-              className="text-lg text-gray-300 leading-relaxed"
+              className="text-lg text-gray-300 leading-relaxed font-normal"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

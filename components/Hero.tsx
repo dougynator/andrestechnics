@@ -40,7 +40,7 @@ export default function Hero() {
 
           {/* Description */}
           <motion.p 
-            className="text-lg text-gray-300 leading-relaxed"
+            className="text-lg text-gray-300 leading-relaxed font-normal"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -58,7 +58,7 @@ export default function Hero() {
             {['Gratis offerte', 'Snelle service', '15+ jaar ervaring'].map((feature, index) => (
               <motion.div
                 key={feature}
-                className="flex items-center gap-3 text-white"
+                className="flex items-center gap-3 text-white text-base font-normal"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 + index * 0.1, duration: 0.4 }}
@@ -70,7 +70,7 @@ export default function Hero() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   )}
                 </svg>
-                <span>{feature}</span>
+                <span className="font-normal">{feature}</span>
               </motion.div>
             ))}
           </motion.div>

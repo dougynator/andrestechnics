@@ -42,23 +42,24 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="diensten" className="bg-gradient-to-b from-dark-light to-dark py-20">
+    <section id="diensten" className="bg-dark-light py-20">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-dark rounded-lg overflow-hidden hover-glow border border-dark-lighter"
+              className="bg-dark rounded-lg overflow-hidden border border-dark-lighter transition-all duration-300 hover:border-primary/30"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.5 }}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(255, 107, 53, 0.15)' }}
             >
-              <div className="relative w-full h-48 overflow-hidden">
+              <div className="relative w-full h-48 overflow-hidden bg-dark-lighter">
                 <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
+                  className="w-full h-full"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
                 >
                   <Image
                     src={service.image}
@@ -69,31 +70,45 @@ export default function Services() {
                 </motion.div>
               </div>
               <div className="p-6">
-                <h3 className="text-2xl font-display font-bold text-white mb-3">{service.title}</h3>
-                <p className="text-gray-300 mb-4">{service.description}</p>
-                <ul className="space-y-2 mb-6">
+                <h3 className="text-2xl font-display font-bold text-white mb-3 leading-tight">
+                  {service.title}
+                </h3>
+                <p className="text-gray-300 mb-6 text-base leading-relaxed font-normal">
+                  {service.description}
+                </p>
+                <ul className="space-y-3 mb-6">
                   {service.items.map((item, itemIndex) => (
                     <motion.li
                       key={itemIndex}
-                      className="flex items-center gap-2 text-gray-300"
+                      className="flex items-start gap-3 text-gray-300 text-sm leading-relaxed"
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: index * 0.2 + itemIndex * 0.1 }}
+                      transition={{ delay: index * 0.2 + itemIndex * 0.1, duration: 0.3 }}
                     >
-                      <svg className="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      <svg 
+                        className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span>{item}</span>
+                      <span className="font-normal">{item}</span>
                     </motion.li>
                   ))}
                 </ul>
                 <Link
                   href="#contact"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary-dark transition-all duration-300 font-medium group"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary-dark transition-all duration-300 font-medium text-sm group"
                 >
                   Meer info
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg 
+                    className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
@@ -112,7 +127,7 @@ export default function Services() {
         >
           <Link
             href="#contact"
-            className="btn-gradient inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg font-medium"
+            className="btn-gradient inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg font-medium text-base"
           >
             Bespreek uw project
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
