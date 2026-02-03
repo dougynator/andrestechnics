@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const services = [
   {
@@ -39,60 +42,85 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="diensten" className="bg-dark-light py-20">
+    <section id="diensten" className="bg-gradient-to-b from-dark-light to-dark py-20">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
-            <div key={index} className="bg-dark rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="relative w-full h-48">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover"
-                />
+            <motion.div
+              key={index}
+              className="bg-dark rounded-lg overflow-hidden hover-glow border border-dark-lighter"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2, duration: 0.5 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="relative w-full h-48 overflow-hidden">
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-display font-bold text-white mb-3">{service.title}</h3>
                 <p className="text-gray-300 mb-4">{service.description}</p>
                 <ul className="space-y-2 mb-6">
                   {service.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-center gap-2 text-gray-300">
+                    <motion.li
+                      key={itemIndex}
+                      className="flex items-center gap-2 text-gray-300"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.2 + itemIndex * 0.1 }}
+                    >
                       <svg className="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>{item}</span>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
                 <Link
                   href="#contact"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary-dark transition-colors font-medium"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary-dark transition-all duration-300 font-medium group"
                 >
                   Meer info
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* CTA Button */}
-        <div className="text-center">
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+        >
           <Link
             href="#contact"
-            className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary-dark transition-colors font-medium"
+            className="btn-gradient inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg font-medium"
           >
             Bespreek uw project
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
 }
-
